@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminManagementController extends Controller
 {
+    //trash code
     public function adminManagement() {
 
         return view('admin\adm_management', ['admins'=> User::where('role', "!=", 0)->get()]);
