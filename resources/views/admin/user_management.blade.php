@@ -20,18 +20,9 @@
                 <i class="fas fa-chess-king fa-3x pt-4 fa-flip-horizontal"></i>
             </div>
         </div>
-        <section class="section">
-            <div class="container ">
-                <div class="content-section">
-                    <div class="row justify-content-center align-items-center admin-menu">
-                        <a href="" class="mx-3">Users</a>
-                        <a href="" class="mx-3">Administrators</a>
-                        <a href="" class="mx-3">Posts</a>
-                    </div>
-                </div>
 
-            </div>
-        </section>
+        @include('admin.adm_menu')
+
         <section class="section">
             <div class="container ">
                 <div class="content-section">
@@ -39,7 +30,7 @@
                         <div class="col-12 d-flex flex-column">
                             @include('admin.user_info')
                         </div>
-                        <form action="{{ route('userUpdate', [$user->id]) }}" method="post" class="row justify-content-center px-6">
+                        <form action="{{ route('userUpdate', [$user]) }}" method="post" class="row justify-content-center px-6">
                             @csrf
                             {{ method_field('PUT') }}
                             <input type="hidden" name="id" value={{ $user->id }}>
@@ -125,5 +116,6 @@
                     dateFormat: 'dd-mm-yy', });
             });
         </script>
+    </section>
 @endsection()
 

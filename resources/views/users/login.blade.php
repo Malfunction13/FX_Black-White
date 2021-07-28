@@ -8,13 +8,16 @@
                 <i class="fas fa-chess-bishop fa-3x pt-4"></i>
                 <div class="col">
                     <div class="heading">Log in</div>
-                    <div class="description">If you forgot your username or password click [here]</div>
+                    <div class="description">If you forgot your username or password click the link below our log-in form.</div>
                 </div>
                 <i class="fas fa-chess-bishop fa-3x pt-4 fa-flip-horizontal"></i>
             </div>
         </div>
         <div class="container">
             <div class="content-section">
+
+                @include('layouts.status_info')
+
                 <form action="{{ route('login') }}" method="post" class="row justify-content-center px-6">
                     @csrf
                     <div class="column-flex align-items-center">
@@ -52,12 +55,13 @@
                         </div>
                     </div>
                 </form>
+                <a href="" id="forgot_password_modal" class="d-flex justify-content-center mt-3" data-toggle="modal" data-target="#global_modal" >Forgot password?</a>
             </div>
         </div>
     </section>
+@endsection
 
-
-
-
-
+@section('scripts')
+    <script type="module" src="{{ URL::asset('assets/js/login/modal_handler.js') }}"></script>
+    <script type="module" src="{{ URL::asset('assets/js/login/forgot_pwd_handler.js') }}"></script>
 @endsection

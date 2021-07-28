@@ -1,7 +1,7 @@
 <footer>
-    <div class="section section-footer">
+    <div class="section-footer">
         <div class="row pt-4 d-flex justify-content-center">
-            <div class="col-sm-6 col-md-3 pb-4">
+            <div class="col-6 col-md-3 pb-4 ml-2">
                 <h4 class="mb-4">
                     Services
                 </h4>
@@ -17,7 +17,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-6 col-md-3 pb-4">
+            <div class="col-6 col-md-3 pb-4 mr-2">
                 <h4 class="mb-4">
                     About
                 </h4>
@@ -53,8 +53,8 @@
         <div class="col d-flex justify-content-center mb-4">
             <a href="#" class="d-block px-3"><img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-facebook-m.png" alt="Facebook" /></a><a href="#" class="d-block px-3"><img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter-m.png" alt="Twitter" /></a><a href="#" class="d-block px-3"><img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-instagram-m.png" alt="Instagram" /></a><a href="#" class="d-block px-3"><img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-linkedin-m.png" alt="Linkedin" /></a>
         </div>
-        <p class="text-center py-4">
+        <div class="text-center py-4">
             Teamtech
-        </p>
+        </div>
     </div>
 </footer>

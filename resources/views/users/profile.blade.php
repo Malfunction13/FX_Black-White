@@ -1,18 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    PROFILE PAGE {{ auth()->user()->username }}
-
-    <form action="{{ route('createCategory') }}" method="post" class="row justify-content-center px-6">
-        @csrf
-        <div class="form-row justify-content-center register">
-            <div class="register-top col-md-6">
-                <label for="name">New category name</label>
-                <input type="text" name="name" id="name"  required>
-            </div>
-            <input type="submit" value="Create" class="register-btn mt-3">
+<div class="container">
+    <div class="section-heading d-flex">
+        <i class="fas fa-chess-king fa-3x pt-4"></i>
+        <div class="col">
+            <div class="heading">User profile</div>
+            <div class="description">Welcome {{ auth()->user()->username }}, your subscription is {{ auth()->user()->subscribed ? 'active.' : 'inactive.' }}</div>
         </div>
+        <i class="fas fa-chess-king fa-3x pt-4 fa-flip-horizontal"></i>
+    </div>
+</div>
+<div class="container">
+    <div class="content-section">
+        <div class="col">
 
-    </form>
+            @include('layouts.status_info')
 
+            <div class="mb-5 d-flex align-items-center">
+                <div id="change_pwd_modal" class="modal-button mr-4" data-toggle="modal" data-target="#global_modal" data-id="{{ $user->id }}">Change password</div>
+                <div id="change_email_modal" class="modal-button mx-4" data-toggle="modal" data-target="#global_modal" data-id="{{ $user->id }}">Change email</div>
+                <div id="extend_modal" class="modal-button mx-4" data-toggle="modal" data-target="#global_modal" data-id="{{ $user->id }}">Extend subscription</div>
+            </div>
+
+            @include('layouts.profile_info')
+
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+    <script type="module" src="{{ URL::asset('assets/js/profile/profile_overview_handler.js') }}"></script>
+    <script type="module" src="{{ URL::asset('assets/js/profile/modal_handler.js') }}"></script>
 @endsection

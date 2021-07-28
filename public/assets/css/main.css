@@ -4,13 +4,24 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 100vh;
+    min-height: 100%;
     overflow-x: hidden;
     color: whitesmoke;
 }
 
+/*little hack for nicely formatted cross-browser br height*/
+br {
+    content: ""; /*chrome and edge*/
+    margin: -20px 2em 2em 2em;
+    display: block;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: whitesmoke;
+}
+
+h4 {
+    font-weight: 600;
 }
 
 ul {
@@ -35,15 +46,14 @@ ul {
 }
 
 .navbar {
-    /*overflow: hidden;*/
-    /*background-color: darkgoldenrod;*/
     position: sticky; /* Set the navbar to fixed position */
-    /*top: 0; !* Position the navbar at the top of the page *!*/
+    top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
 }
 
-.site-header .navbar-nav .nav-link {
-  color: black;
+.nav-item {
+    font-family: "Segoe UI Semibold";
+    font-size: 18px;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -57,8 +67,6 @@ ul {
 .section {
     padding-bottom: 40px;
 }
-
-
 
 .section-heading {
     text-align: center;
@@ -86,13 +94,28 @@ ul {
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.75), 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
+.form-section {
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 1px solid rgba(255, 215, 0, 0.9);
+
+}
 
 .content-section, .section-heading {
     margin-top: 60px;
     padding-top: 60px;
     padding-bottom: 60px;
+    border-top: 2px solid rgba(255, 215, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content-section {
+    margin-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-top: 1px solid rgba(255, 215, 0, 0.9);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .left-image img, .right-image img, .modal-box {
@@ -105,8 +128,23 @@ ul {
     padding-left: 25px;
     padding-right: 25px;
 }
+.article-image, .article-text{
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
+.text-preview {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 
+.thumbnail {
+    object-fit: cover;
+    max-width: 500px;
+    max-height: 500px;
+}
 
 
 .content-section p, .content-section p {
@@ -114,13 +152,18 @@ ul {
 }
 
 
+.active {
+    color: goldenrod !important;
+    border-color: goldenrod;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.75), 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
 button {
     background: none;
     border: none;
     font-size: 1em;
     color: whitesmoke;
     font-weight: 400;
-    text-transform: uppercase !important;
 }
 
 button:hover {
@@ -129,11 +172,7 @@ button:hover {
 }
 
 
-.white-button {
-    margin-top: 25px;
-}
-
-.white-button a, .register-btn  {
+.white-button a, .register-btn, .search-button, .management-button, .modal-button {
     display: inline-block;
     padding: 12px 20px;
     background-color: black;
@@ -146,18 +185,32 @@ button:hover {
     transition: all 0.5s;
 }
 
-.white-button a:hover, .register-btn:hover  {
+.white-button a:hover, .register-btn:hover,.management-button:hover,.modal-button:hover, .sm-management-button:hover  {
     background-color: white;
     color: black;
     border: 1px solid goldenrod;
 }
 
+.sm-management-button {
+    display: inline-block;
+    padding: 8px 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.5s;
+}
+
 footer {
     position: relative;
-    bottom: 1px;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
     border-top: 3px solid goldenrod;
     margin-top: 60px;
+    margin-bottom: 0;
 
 }
 
@@ -206,7 +259,6 @@ a {
 a:hover {
     color: goldenrod;
     font-weight: 600;
-
 }
 
 
@@ -266,10 +318,4 @@ a:hover {
 
 .modal-close:hover {
     color: goldenrod;
-}
-
-.modal-window h2 {
-    color: black !important;
-    font-size: 150%;
-    margin: 0 0 15px;
 }

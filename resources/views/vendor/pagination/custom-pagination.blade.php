@@ -1,9 +1,9 @@
 @if ($paginator->hasPages())
 
         @if ($paginator->onFirstPage())
-            <div class="disabled">Previous</div>
+            <div class="disabled search-button mr-2">Previous</div>
         @else
-            <div><a href="{{ $paginator->previousPageUrl() }}" rel="prev">Previous</a></div>
+            <div class="mr-2"><a class="search-button" href="{{ $paginator->previousPageUrl() }}" rel="prev">Previous</a></div>
         @endif
 
         @foreach ($elements as $element)
@@ -17,18 +17,18 @@
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <div class="mx-2 active my-active">{{ $page }}</div>
+                        <div class="disabled mx-2 search-button active ">{{ $page }}</div>
                     @else
-                        <div class="mx-2"><a href="{{ $url }}">{{ $page }}</a></div>
+                        <div class="mx-2"><a class="search-button" href="{{ $url }}">{{ $page }}</a></div>
                     @endif
                 @endforeach
             @endif
         @endforeach
 
         @if ($paginator->hasMorePages())
-            <div><a href="{{ $paginator->nextPageUrl() }}" rel="next">Next</a></div>
+            <div class="ml-2"><a class="search-button" href="{{ $paginator->nextPageUrl() }}" rel="next">Next</a></div>
         @else
-            <div class="disabled">Next</div>
+            <div class="disabled search-button ml-2">Next</div>
         @endif
 
 @endif

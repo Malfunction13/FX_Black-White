@@ -18,6 +18,8 @@
                 <form action="{{ route('register') }}" method="post" class="row justify-content-center px-6">
                     @csrf
                     <div class="form-row justify-content-center content-section">
+                        @include('layouts.status_info')
+
                         <div class="register-top col-md-6">
                             <div class="col">
                                 <label for="username">Username</label>
